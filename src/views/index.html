@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .box{
+        display: flex;
+         width: 200px;
+         height: 200px;
+         background-color: beige;
+         flex-wrap: wrap;
+         align-content: flex-start;
+       }
+       .box div{
+        background-color: blueviolet;
+        border:2px solid black;
+        flex:0 1 25%;
+        height: 50px;
+        /* 默认情况下，元素的宽度和高度只包括内容区域的尺寸，
+        而当设置 box-sizing: border-box 时，
+        元素的宽度和高度包括内容区域、内边距和边框的尺寸。
+        这里这样做的好处是不用考虑边框宽度问题进行布局
+         */
+        box-sizing: border-box;
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    
+</body>
+</html>

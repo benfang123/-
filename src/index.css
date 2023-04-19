@@ -1,0 +1,137 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    color: #777;
+}
+html{
+    width: 100%;
+    height: 100vh;
+    font-size: 62.5%;
+}
+a{
+    text-decoration: none;
+}
+ul li{
+    list-style: none;
+}
+i{
+    font-size:normal ;
+}
+
+/* ================================ */
+#app{
+    display: flex;
+}
+#left{
+    flex: 0 1 20rem;
+    background-color: #333;
+    overflow: hidden;
+    /* flex-basis: 200px; */
+}
+#right{
+    flex:1;
+    /* background-color: antiquewhite; */
+}
+.left-main{
+    color: aliceblue;
+}
+.left-hading{
+    background-color: #404040;
+    padding: .5rem;
+}
+.left-hading span,.left-hading i{
+    font-size: 1.8rem;
+    margin: .5rem;
+
+}
+
+.left-main ul li{
+    padding: .5rem 0;
+    margin-left: 4rem;
+
+}
+/* 右侧的样式 */
+/* 头部 */
+.right-header{
+    text-align: center;
+    border: 1px solid #eee;
+}
+.right-header h1{
+    font-size: 3rem;
+    font-weight: 400;
+}
+.right-header h2{
+    font-size: 2rem;
+    font-weight: 300;
+    color: #ccc;
+}
+/* 右侧内容样式 */
+.right-content{
+    padding: 2rem;
+}
+.right-content-title{
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+}
+.right-content-title h3{
+    font-size: 1.8rem;
+}
+.right-content ul{
+    display: flex;
+    justify-content:space-between;
+    margin:1rem 0;
+    flex-wrap: wrap;
+
+}
+.right-content ul li{
+    flex:0 1 24%;
+    overflow: hidden;
+    
+}
+.right-content ul li img{
+    max-width: 100%;
+    transition:all 1s ease;
+    
+}
+.right-content ul li img:hover{
+    transform:scale(1.2);}
+/* transform 改变元素形状改变 */
+
+/* 响应式页面 */
+/* 小于1200一行显示两个，换行效果标题的字体变小 */
+@media(max-width:1200px){
+    .right-content ul li{
+        flex:0 1 49%;
+        margin: .4rem 0;     
+    }
+}
+/* >992将左侧的栏再过度回来 */
+@media (min-width: 992px) {
+    #left {
+      transition: all 0.5s ease;
+      margin-left: 0;
+    }
+  }
+/*<992 左侧菜单栏隐藏  */
+@media (max-width:992px){
+    .right-header h1{
+        font-size: 2.5rem;
+    }
+    .right-header h2{
+        font-size: 1.8rem;
+    }
+    #left{
+        transition: all 0.5s ease;
+        margin-left: -20rem;
+    }
+}
+/* <768 显示一行，左侧菜单栏也是没有的 */
+@media(max-width:768px) {
+    .right-content ul li{
+        flex:0 1 90%;
+        margin: .4rem 0;        
+    }
+}
